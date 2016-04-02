@@ -1,0 +1,53 @@
+{
+    "name": "TUBA",
+    "author": {
+        "name": "Azai Chan",
+        "email": "azai.tw@gmail.com"
+    },
+    "version": "0.0.1",
+    "description": "Tuba front-end builder",
+    "homepage": "",
+    "keywords": [],
+    "main": "server.js",
+    "scripts": {
+        "dev": "gulp build-dev; node server.js",
+        "start": "gulp build; node server.js",
+        "build": "gulp build",
+        "build-dev": "gulp build-dev",
+        "less": "gulp less",
+        "css": "gulp minify-css",
+        "lint": "gulp lint",
+        "template": "gulp render-template"
+    },
+    "dependencies": {
+        "express": "4.11.2",
+        "gulp": "3.8.10",
+        "gulp-base64": "0.1.2",
+        "gulp-clean": "0.3.2",
+        "gulp-clean-css": "2.0.4",
+        "gulp-compile-handlebars": "0.4.4",
+        "gulp-concat": "*",
+        "gulp-inline-source": "*",
+        "gulp-jshint": "*",
+        "gulp-jsonlint": "*",
+        "gulp-less": "3.0.1",
+        "gulp-minify-html": "*",
+        "gulp-rename": "*",
+        "gulp-tinypng": "*",
+        "gulp-uglify": "*",
+        "gulp-watch": "*"
+    },
+    "repository": {
+    "type": "git",
+    "url": "git://github.com/azaitw/tuba.git"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": ""
+        }
+    ],
+    "engines": {
+        "node": ">= 0.10.0"
+    }
+}

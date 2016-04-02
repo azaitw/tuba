@@ -1,0 +1,23 @@
+{
+    "index": {
+        "title": "台灣城市單車聯盟",
+        "nav": [
+            {
+                "name": "活動",
+                "url": "/events"
+            },
+            {
+                "name": "專案",
+                "url": "/projects"
+            },
+            {
+                "name": "關於我們",
+                "url": "/about"
+            },
+            {
+                "name": "聯絡我們",
+                "url": "/contact"
+            }
+        ]
+    }
+}
