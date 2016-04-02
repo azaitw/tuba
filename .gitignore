@@ -1,5 +1,4 @@
 .DS_Store
 node_modules
 source/html
-output/*.*
-output/zh/*.*
+npm-debug.log
