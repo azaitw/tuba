@@ -8,10 +8,11 @@
         <!-- endbuild -->
     </head>
     <body>
-        <div class="wrap">
+        <div class="wrap {{class}}">
             {{>header}}
-
-            <div class="body"></div>
+            <div class="body">
+                {{>blocks}}
+            </div>
             <div class="footer"></div>
         </div>
     </body>

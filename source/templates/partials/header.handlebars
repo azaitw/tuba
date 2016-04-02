@@ -1,10 +1,15 @@
 <div class="header">
-    <h1 class="logo"></h1>
+    <div class="logo-wrap">
+        <div class="logo"></div>
+    </div>
+    <div class="title-wrap">
+        <h1 class="title"><span class="notxt">{{title}}</span></h1>
+    </div>
     <div class="nav">
-        <ul class="nav-ul">
+        <ul class="ul">
             {{#nav}}
-            <li class="nav-li">
-                <a class="nav-a" href="{{url}}">{{name}}</a>
+            <li class="li">
+                <a class="a" href="{{url}}">{{name}}</a>
             </li>
             {{/nav}}
         </ul>

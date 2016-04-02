@@ -1,5 +1,6 @@
 {
     "index": {
+        "class": "en",
         "title": "Tuba",
         "nav": [
             {
@@ -17,6 +18,26 @@
             {
                 "name": "Contact",
                 "url": "/contact"
+            }
+        ],
+        "blocks": [
+            {
+                "class": "hero",
+                "video": {
+                    "mp4": "https://a0.muscache.com/airbnb/static/Seoul-P1-4.mp4",
+                    "webm": "https://a0.muscache.com/airbnb/static/Seoul-P1-4.webm"
+                },
+                "title": "Badass title",
+                "subtitle": "And really impressive subtitle"
+            },
+            {
+                "class": "propaganda",
+                "title": "Propaganda title",
+                "p": [
+                    "para 1",
+                    "para 2",
+                    "para 3"
+                ]
             }
         ]
     }

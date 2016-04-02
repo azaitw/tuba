@@ -1,0 +1,70 @@
+/** San Francisco Font */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 100;
+  src: url("/images/fonts/sanfranciscodisplay-ultralight-webfont.woff");
+}
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 200;
+  src: url("/images/fonts/sanfranciscodisplay-thin-webfont.woff");
+}
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("/images/fonts/sanfranciscodisplay-regular-webfont.woff");
+}
+/** Medium */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 500;
+  src: url("/images/fonts/sanfranciscodisplay-medium-webfont.woff");
+}
+/** Semi Bold */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 600;
+  src: url("/images/fonts/sanfranciscodisplay-semibold-webfont.woff");
+}
+/** Bold */ 
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 700;
+  src: url("/images/fonts/sanfranciscodisplay-bold-webfont.woff");
+}
+.wrap {
+    font-family: "San Francisco";
+}
+// Hide element or text
+.hidden {
+    display: none !important;
+}
+.notxt {
+    position: absolute !important;
+    height: 1px; 
+    width: 1px; 
+    overflow: hidden; 
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */ 
+    clip: rect(1px, 1px, 1px, 1px); 
+}
+.Cf { // Clearfix
+    *zoom: 1;
+    &:before {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
+}
+body {
+    background: #03223e;
+}
+.wrap {
+    background: #fff;
+}
+.a {
+    text-decoration: none;
+}

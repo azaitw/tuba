@@ -14,7 +14,7 @@ module.exports = function (gulp, config) {
         return gulp.src('./source/templates/index.handlebars')
         .pipe(handlebars(data, options))
         .pipe(rename('index.html'))
-        .pipe(gulp.dest('./output'));
+        .pipe(gulp.dest('./assets'));
     });
     gulp.task('hbs-index-zh', function () {
         var data = require('./source/data/zh/data.json').index;
@@ -25,22 +25,22 @@ module.exports = function (gulp, config) {
         return gulp.src('./source/templates/index.handlebars')
         .pipe(handlebars(data, options))
         .pipe(rename('index.html'))
-        .pipe(gulp.dest('./output/zh'));
+        .pipe(gulp.dest('./assets/zh'));
     });
 
     gulp.task('handlebars', ['hbs-index', 'hbs-index-zh'], function () {
-        return gulp.src('./output/**/*.html')
+        return gulp.src('./assets/**/*.html')
         .pipe(replace({
             css: {
-                src: config.fileNames.css,
+                src: '/' + config.fileNames.css,
                 tpl: '<link rel="stylesheet" href="%s">'
             },
             js: {
-                src: config.fileNames.js,
+                src: '/' + config.fileNames.js,
                 tpl: '<script src="%s"></script>'
             }
         }))
-        .pipe(gulp.dest('./output'));
+        .pipe(gulp.dest('./assets'));
     });
     gulp.task('handlebars-prod', function () {
         var optsHtml = {
@@ -50,7 +50,7 @@ module.exports = function (gulp, config) {
         var optsInline = {
             swallowErrors: true
         };
-        return gulp.src('./output/**/*.html')
+        return gulp.src('./assets/**/*.html')
         .pipe(replace({
             css: {
                 src: config.fileNames.css,
@@ -63,6 +63,6 @@ module.exports = function (gulp, config) {
         }))
         .pipe(inlinesource(optsInline))
         .pipe(minifyHTML(optsHtml))
-        .pipe(gulp.dest('./output'));
+        .pipe(gulp.dest('./assets'));
     });
 };

@@ -11,9 +11,8 @@
     "main": "server.js",
     "scripts": {
         "dev": "gulp build-dev; gulp dev",
-        "start": "gulp build; node server.js",
         "build": "gulp build",
-        "build-dev": "gulp build-dev"
+        "start": "node server.js"
     },
     "dependencies": {
         "express": "4.11.2",

@@ -1,0 +1,142 @@
+@logoBlue: #03223e;
+
+@logoWidth: 400px;
+@logoHeight: 229px;
+@logoRatio: 0.20;
+@logoW: @logoWidth * @logoRatio;
+@logoH: @logoHeight * @logoRatio;
+
+@titleRatio: 0.38;
+@titleWidth: 482px;
+@titleHeight: 87px;
+@titleW: @titleWidth * @titleRatio;
+@titleH: @titleHeight * @titleRatio;
+.header {
+    position: relative;
+    width: 100%;
+    height: 58px;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+    z-index: 10;
+    &:before {
+        position: absolute;
+        display: block;
+        content: " ";
+        width: 100%;
+        height: 5px;
+        top: 0;
+        left: 0;
+        background: @logoBlue;
+    }
+
+    .logo-wrap {
+        position: relative;
+        margin: 0 auto;
+        width: @logoW;
+        z-index: 10;
+        .logo {
+            background: url('./images/tuba-logo-bike.png') no-repeat center;
+            background-size: @logoW @logoH;
+            width: 100%;
+            height: @logoH;
+            position: absolute;
+            left: 0;
+            top: 9px;
+        }
+    }
+    .title-wrap {
+        position: relative;
+        margin: 0 auto;
+        width: @titleW;
+        .title {
+            background: url('./images/tuba-logo-title-zh.png') no-repeat center;
+            background-size: @titleW @titleH;
+            position: absolute;
+            left: 0;
+            top: @logoH + 9;
+            width: @titleW;
+            height: @titleH;
+        }
+    }
+    .nav {
+        width: 840px;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+        top: 0;
+        &:after {
+            position: absolute;
+            display: none;
+            content: " ";
+            height: 1px;
+            width: 740px;
+            left: 50px;
+            bottom: 0;
+            background: #ddd;
+        }
+        .ul {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 0;
+            .li {
+                display: inline-block;
+                width: 18%;
+                height: 26px;
+                margin: 0 1%;
+                text-align: center;
+                .a {
+                    font-size: 17px;
+                    font-weight: 400;
+                    padding: 22px 0 10px 0;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    &:link,
+                    &:visited {
+                        color: @logoBlue;
+                    }
+                    &:hover {
+                        color: #3e73bb;
+                    }
+                    &:active {
+                        color: #000;
+                    }
+                }
+                &:nth-child(2) {
+                    margin: 0 11% 0 1%;
+                }
+                &:nth-child(3) {
+                    margin: 0 1% 0 11%;
+                }
+            }
+        }
+    }
+}
+.en {
+    .header {
+        .title-wrap {
+            @titleRatioEn: 0.45;
+            @titleWEn: @titleWidth * @titleRatioEn;
+            @titleHEn: @titleHeight * @titleRatioEn;
+            width: @titleWEn;
+            .title {
+                background-image: url('./images/tuba-logo-title-en1.png');
+                background-size: @titleWEn @titleHEn;
+                width: @titleWEn;
+                height: @titleHEn;
+            }
+        }
+        .nav {
+            &:after {
+                width: 724px;
+                left: 60px;
+            }
+            .ul .li .a {
+                padding: 22px 0 8px 0;
+            }
+        }
+    }
+}

@@ -1,13 +1,14 @@
 {
     "index": {
+        "class": "zh",
         "title": "台灣城市單車聯盟",
         "nav": [
             {
-                "name": "活動",
+                "name": "近期活動",
                 "url": "/events"
             },
             {
-                "name": "專案",
+                "name": "專案一覽",
                 "url": "/projects"
             },
             {
@@ -17,6 +18,26 @@
             {
                 "name": "聯絡我們",
                 "url": "/contact"
+            }
+        ],
+        "blocks": [
+            {
+                "class": "hero",
+                "video": {
+                    "mp4": "https://a0.muscache.com/airbnb/static/Seoul-P1-4.mp4",
+                    "webm": "https://a0.muscache.com/airbnb/static/Seoul-P1-4.webm"
+                },
+                "title": "厲害的大標題",
+                "subtitle": "然後用小標題一句話解釋TUBA的厲害"
+            },
+            {
+                "class": "propaganda",
+                "title": "洗腦用途的標題",
+                "p": [
+                    "para 1",
+                    "para 2",
+                    "para 3"
+                ]
             }
         ]
     }

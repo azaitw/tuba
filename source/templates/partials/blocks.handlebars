@@ -1,0 +1,29 @@
+{{#blocks}}
+<div class="{{class}}">
+
+    {{#if image}}
+    <img class="img" src="/images/{{image}}">
+    {{/if}}
+
+    {{#if video}}
+        <video preload="auto" autoplay="autoplay" class="video">
+          <source src="{{video.mp4}}" type="video/mp4">
+          <source src="{{video.webm}}" type="video/webm">
+        </video>
+    {{/if}}
+
+    {{#if title}}
+    <div class="title-wrap">
+        <h2 class="title">{{title}}</h2>
+        {{#if subtitle}}
+            <h3 class="subtitle">{{subtitle}}</h3>
+        {{/if}}
+    </div>
+    {{/if}}
+
+    {{#p}}
+    <p>{{.}}</p>
+    {{/p}}
+
+</div>
+{{/blocks}}
