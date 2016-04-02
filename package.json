@@ -27,6 +27,7 @@
         "gulp-clean-css": "2.0.4",
         "gulp-compile-handlebars": "0.4.4",
         "gulp-concat": "*",
+        "gulp-html-replace": "1.5.5",
         "gulp-inline-source": "*",
         "gulp-jshint": "*",
         "gulp-jsonlint": "*",

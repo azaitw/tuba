@@ -1,26 +1,30 @@
 'use strict';
 
+var version = require('./package.json').version;
 var config = {
     less: ['./source/less/reset.less'],
     js: [],
     devTasks: ['init', 'css', 'js', 'handlebars'],
-    prodTasks: ['init', 'css-prod', 'js-prod', 'handlebars-prod']
-}
+    prodTasks: ['init', 'css-prod', 'js-prod', 'handlebars-prod'],
+    fileNames: {
+        css: '/tuba_' + version + '.css',
+        js: '/tuba_' + version + '.js'
+    }
+};
 
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var gulp = require('gulp');
-//var handlebars = require('gulp-compile-handlebars');
-var handlebarsTasks = require('./gulpfile-handlebars');
 var jshint = require('gulp-jshint');
 var jsonlint = require("gulp-jsonlint");
 var less = require('gulp-less');
 var minifyCSS = require('gulp-clean-css');
 var path = require('path');
 var uglify = require('gulp-uglify');
-var version = require('./package.json').version;
 
-handlebarsTasks(gulp);
+var handlebarsTasks = require('./gulpfile-handlebars');
+
+handlebarsTasks(gulp, config);
 // Dependent tasks will be executed before others
 gulp.task('init', ['jsonlint', 'jshint'], function () {
     return;
