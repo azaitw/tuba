@@ -19,6 +19,7 @@ var jshint = require('gulp-jshint');
 var jsonlint = require("gulp-jsonlint");
 var less = require('gulp-less');
 var minifyCSS = require('gulp-clean-css');
+var nodemon = require('gulp-nodemon');
 var path = require('path');
 var uglify = require('gulp-uglify');
 
@@ -26,8 +27,8 @@ var handlebarsTasks = require('./gulpfile-handlebars');
 
 handlebarsTasks(gulp, config);
 // Dependent tasks will be executed before others
-gulp.task('init', ['jsonlint', 'jshint'], function () {
-    return;
+gulp.task('init', ['jsonlint', 'jshint'], function (done) {
+    return done;
 });
 
 gulp.task('jsonlint', function () {
@@ -48,6 +49,7 @@ gulp.task('css', function() {
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
     .pipe(concat(filename))
+//    .pipe(watch('./source/less/**/*'))
     .pipe(gulp.dest('./output'));
 });
 gulp.task('css-prod', function() {
@@ -80,5 +82,13 @@ gulp.task('js-prod', function () {
     .pipe(gulp.dest('./output'));
 });
 
+gulp.task('dev', function () {
+  nodemon({
+      script: 'server.js',
+      ext: 'less js handlebars',
+      tasks: ['build-dev']
+  })
+})
+
 gulp.task('build-dev', config.devTasks, function (done) {return});
-gulp.task('build', config.prodTasks, function (done) {return});
+gulp.task('build', config.prodTasks, function (done) {return done()});
