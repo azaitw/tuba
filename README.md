@@ -30,9 +30,9 @@ In Terminal, navigate to this project folder, and execute this command to build 
 
     'npm run build'
 
-If you wish to build non-compressed version for development debugging, use this command:
+If you wish to build non-compressed version and run server for development, use this command:
 
-    'npm run build-dev'
+    'npm run dev'
 
 Once it's done, you should see the generated HTML in /output/index.html. Use the following command to start a simple Node.js server and verify this page:
 
