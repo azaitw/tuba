@@ -13,11 +13,7 @@
         "dev": "gulp build-dev; node server.js",
         "start": "gulp build; node server.js",
         "build": "gulp build",
-        "build-dev": "gulp build-dev",
-        "less": "gulp less",
-        "css": "gulp minify-css",
-        "lint": "gulp lint",
-        "template": "gulp render-template"
+        "build-dev": "gulp build-dev"
     },
     "dependencies": {
         "express": "4.11.2",
