@@ -1,4 +1,4 @@
-@logoBlue: #03223e;
+@import "./vars.less";
 
 @logoWidth: 400px;
 @logoHeight: 229px;
@@ -11,6 +11,7 @@
 @titleHeight: 87px;
 @titleW: @titleWidth * @titleRatio;
 @titleH: @titleHeight * @titleRatio;
+
 .header {
     position: relative;
     width: 100%;
@@ -59,7 +60,7 @@
         }
     }
     .nav {
-        width: 840px;
+        width: @pageWidth;
         height: 100%;
         margin: 0 auto;
         position: relative;
@@ -90,7 +91,7 @@
                 .a {
                     font-size: 17px;
                     font-weight: 400;
-                    padding: 22px 0 10px 0;
+                    padding: 23px 0 9px 0;
                     display: block;
                     width: 100%;
                     height: 100%;
@@ -138,5 +139,62 @@
                 padding: 22px 0 8px 0;
             }
         }
+    }
+}
+
+.body {
+    margin: 0 0 20px 0;
+    .hero {
+        position: relative;
+        margin: 0 0 20px 0;
+        .img,
+        .video {
+            width: 100%;
+        }
+        .title-wrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: #fff;
+        }
+        .title {
+            padding: 25% 0 0 0;
+            text-align: center;
+            font-size: 48px;
+            text-shadow: 0 0 8px #555;
+            letter-spacing: 1px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 15px;
+            margin: 12px 0 0 0;
+            text-shadow: 0 0 8px #555;
+            letter-spacing: 0.3px;
+        }
+    }
+    .propaganda {
+        width: @pageWidth;
+        margin: 0 auto 20px auto;
+        .title {
+            text-align: center;
+            font-size: 30px;
+            margin: 0 0 15px 0;
+        }
+        .p {
+            margin: 0 0 15px 0;
+        }
+    }
+}
+
+.footer {
+    height: 40px;
+    padding: 25px 0 0 0;
+    text-align: center;
+    background: @logoBlue;
+    .text {
+        font-size: 12px;
+        color: #fff;
     }
 }

@@ -2,7 +2,7 @@
 
 var version = require('./package.json').version;
 var config = {
-    less: ['reset.less', 'common.less', 'header.less', 'body.less'],
+    less: ['reset.less', 'main.less'],
     js: ['tuba.js'],
     devTasks: ['init', 'images', 'css', 'js', 'handlebars'],
     prodTasks: ['init', 'images', 'css-prod', 'js-prod', 'handlebars-prod'],
