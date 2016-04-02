@@ -4,6 +4,18 @@ var minifyHTML = require('gulp-minify-html');
 var rename = require('gulp-rename');
 var replace = require('gulp-html-replace');
 
+var replaceObj = function (path, config) {
+    return {
+        css: {
+            src: path + config.fileNames.css,
+            tpl: '<link rel="stylesheet" href="%s">'
+        },
+        js: {
+            src: path + config.fileNames.js,
+            tpl: '<script src="%s"></script>'
+        }
+    };
+};
 module.exports = function (gulp, config) {
     gulp.task('hbs-index', function () {
         var data = require('./source/data/data.json').index;
@@ -14,6 +26,7 @@ module.exports = function (gulp, config) {
         return gulp.src('./source/templates/index.handlebars')
         .pipe(handlebars(data, options))
         .pipe(rename('index.html'))
+        .pipe(replace(replaceObj('./', config)))
         .pipe(gulp.dest('./assets'));
     });
     gulp.task('hbs-index-zh', function () {
@@ -25,23 +38,11 @@ module.exports = function (gulp, config) {
         return gulp.src('./source/templates/index.handlebars')
         .pipe(handlebars(data, options))
         .pipe(rename('index.html'))
+        .pipe(replace(replaceObj('../', config)))
         .pipe(gulp.dest('./assets/zh'));
     });
 
-    gulp.task('handlebars', ['hbs-index', 'hbs-index-zh'], function () {
-        return gulp.src('./assets/**/*.html')
-        .pipe(replace({
-            css: {
-                src: '/' + config.fileNames.css,
-                tpl: '<link rel="stylesheet" href="%s">'
-            },
-            js: {
-                src: '/' + config.fileNames.js,
-                tpl: '<script src="%s"></script>'
-            }
-        }))
-        .pipe(gulp.dest('./assets'));
-    });
+    gulp.task('handlebars', ['hbs-index', 'hbs-index-zh']);
     gulp.task('handlebars-prod', function () {
         var optsHtml = {
           conditionals: true,
