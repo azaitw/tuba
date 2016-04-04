@@ -12,7 +12,7 @@ Before you start, you need to install Node.js on your computer. Refer to the web
 When installed, clone this repository to you computer, navigate into its directory, and execute this command to install packages, and you are ready to start!
 
     'npm i'
-
+    'npm install --save-dev jshint gulp-jshint'
 
 Development
 =================
